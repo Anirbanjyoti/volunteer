@@ -1,4 +1,5 @@
 // import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -8,12 +9,14 @@ import "./Home.css";
 
 const Home = () => {
   const [donates] = useDonates();
+  const [searchResult, setSearchResult] = useState([])
   // Search functionality
-  // const searchAid = e =>{
-  //   const search = e.target.value;
-  //   console.log(search);
+  const searchAid = e =>{
+    const searchText = e.target.value;
+    const match = donates.filter(d => d.caption.toLowerCase().includes(searchText));
+    setSearchResult(match);
     
-  //  }
+   }
   return (
     <div>
       <div style={{ width: "620px", margin: "50px auto" }}>
@@ -26,7 +29,7 @@ const Home = () => {
             placeholder="Search"
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
-            // onChange={searchAid}
+            onChange={searchAid}
           />
           <Button
             style={{ color: "white" }}
@@ -42,7 +45,7 @@ const Home = () => {
       {/* Volunteers */}
       <h1 className="title">TOTAL Aid: {donates.length}</h1>
       <div className="volunteers">
-        {donates.map((donate) => (
+        {searchResult.map((donate) => (
           <Aid donate={donate}></Aid>
         ))}
       </div>

@@ -11,13 +11,17 @@ import { signOut } from "firebase/auth";
 
 const Header = () => {
   const [user] = useAuthState(auth);
+  // console.log(user.displayName);
 
   const logout = () => {
     signOut(auth);
   };
   return (
     <div>
-      <Navbar style={{background:'#80808054', color:'white'}} variant="light">
+      <Navbar
+        style={{ background: "#80808054", color: "white" }}
+        variant="light"
+      >
         <Container>
           <Navbar.Brand as={Link} to="/">
             <img src={logo} alt="img"></img>
@@ -40,8 +44,7 @@ const Header = () => {
                 <Nav.Link as={Link} to="/events">
                   Events
                 </Nav.Link>
-
-                <Nav.Link onClick={logout}>Log Out</Nav.Link>
+                <Nav.Link onClick={logout}><span><b>{user.displayName}</b></span> Log Out</Nav.Link>
               </>
             ) : (
               <Nav.Link as={Link} to="login">
