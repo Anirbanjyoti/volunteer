@@ -2,29 +2,28 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Login.css";
-import google from "../../images/google.png";
-import github from "../../images/github.png";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import auth from "../../firebase.init";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+// import { Link, useLocation, useNavigate } from "react-router-dom";
+// import auth from "../../firebase.init";
+// import { useAuthState } from "react-firebase-hooks/auth";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const navigate = useNavigate()
-  let errorElement;
-  if (error) {
-    errorElement = (
-      <div>
-        <p className="text-danger">Error: {error.message}</p>
-      </div>
-    );
-  }
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-  if (user) {
-    navigate('/donation');
-  }
+  // const [user, loading, error] = useAuthState(auth);
+  // const navigate = useNavigate()
+  // let errorElement;
+  // if (error) {
+  //   errorElement = (
+  //     <div>
+  //       <p className="text-danger">Error: {error.message}</p>
+  //     </div>
+  //   );
+  // }
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
+  // if (user) {
+  //   navigate('/donation');
+  // }
   return (
     <div style={{ width: "600px", margin: "50px auto" }}>
       <h1>This is User log in page</h1>
@@ -48,18 +47,8 @@ const Login = () => {
           Login
         </Button>
       </Form>
-      {errorElement}
-      <div className="socialLogin">
-
-        <button className="google" onClick={() => signInWithGoogle()}>
-          <img src={google} alt="google" />
-          Google
-        </button>
-        <button className="github">
-          <img src={github} alt="github" />
-          Github
-        </button>
-      </div>
+      {/* {errorElement} */}
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
