@@ -1,22 +1,28 @@
 [
       {
               "caption": "Child Support",
-                "img": "https://i.ibb.co/7pxrFNf/child-Support.png"
+                "img": "https://i.ibb.co/7pxrFNf/child-Support.png",
+                "email": "abc@gmail.com"
+                
         },
         {
               "caption": "Refuge shelter",
-              "img": "https://i.ibb.co/Hg34qWc/refuse-Shelter.png"
+              "img": "https://i.ibb.co/Hg34qWc/refuse-Shelter.png",
+              "email": "abc@gmail.com"
         },
         {
               "caption": "Food Charity",
-              "img": "https://i.ibb.co/Kydr60M/food-Charity.png"
+              "img": "https://i.ibb.co/Kydr60M/food-Charity.png",
+              "email": "abc@gmail.com"
         },
         {
               "caption": "Clean water for children",
-              "img": "https://i.ibb.co/z2S8Gbd/clean-Water.png"
+              "img": "https://i.ibb.co/z2S8Gbd/clean-Water.png",
+              "email": "abc@gmail.com"
         },
         {
               "caption": "New books for children",
-              "img": "https://i.ibb.co/hRt6vGd/newBooks.png"
+              "img": "https://i.ibb.co/hRt6vGd/newBooks.png",
+              "email": "abc@gmail.com"
         }
   ]

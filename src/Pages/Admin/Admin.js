@@ -1,31 +1,45 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import "./Admin.css";
+import Col from "react-bootstrap/Col";
+import Nav from "react-bootstrap/Nav";
+import Row from "react-bootstrap/Row";
+import Tab from "react-bootstrap/Tab";
+import VolunteerRegisList from "../VolunteerRegisList/VolunteerRegisList";
+import AddEvent from "../AddEvent/AddEvent";
+
 
 const Admin = () => {
   return (
-    <div style={{ width: "600px", margin:'50px auto' }}>
-    <h1>This is Admin log in page</h1>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+    <div style={{padding:'0 100px 0 0', margin:'auto'}}>
+      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+      
+        <Row>
+          <Col sm={3}>
+            <Nav variant="pills" className="flex-column" style={{background:'#80808054', padding:'50px 0 50px 100px', height:'100%'}}>
+              <Nav.Item>
+                <Nav.Link eventKey="first" href="#">
+                  Volunteer Registration List
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="second" href="#">
+                  + Add Event
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Col>
+          <Col sm={9}>
+            <Tab.Content>
+              <Tab.Pane eventKey="first">
+                <VolunteerRegisList />
+              </Tab.Pane>
+              <Tab.Pane eventKey="second">
+                <AddEvent />
+              </Tab.Pane>
+            </Tab.Content>
+          </Col>
+        </Row>
+      </Tab.Container>
     </div>
   );
 };

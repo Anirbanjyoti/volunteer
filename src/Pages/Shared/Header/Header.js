@@ -17,7 +17,7 @@ const Header = () => {
   };
   return (
     <div>
-      <Navbar bg="light" variant="light">
+      <Navbar style={{background:'#80808054', color:'white'}} variant="light">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <img src={logo} alt="img"></img>
@@ -34,6 +34,9 @@ const Header = () => {
             </Nav.Link>
             {user ? (
               <>
+                <Nav.Link as={Link} to="/admin">
+                  Admin
+                </Nav.Link>
                 <Nav.Link as={Link} to="/events">
                   Events
                 </Nav.Link>

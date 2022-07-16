@@ -26,7 +26,7 @@ const Login = () => {
   // }
   return (
     <div style={{ width: "600px", margin: "50px auto" }}>
-      <h1>This is User log in page</h1>
+      <h1>Log in Please...</h1>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

@@ -15,10 +15,11 @@ const SocialLogin = () => {
   const [signInWithFacebook, user2, loading2, error2] = useSignInWithFacebook(auth);
   // const [token] = useToken(user || user1)
   const navigate = useNavigate();
-    // Redirection page
+    // Redirection page 
+    // <RequireAuth>
       const location = useLocation();
     let from = location.state?.from?.pathname || "/";
-
+   // </RequireAuth>
   let errorElement;
   if (error || error1 || error2) {
     errorElement = (

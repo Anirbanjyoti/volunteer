@@ -21,24 +21,24 @@ const RequireAuth = ({ children }) => {
   }
   // Email Varification sending if only user and password login .NOTE:No need to varify for  social login .
 
-  if (user.providerData[0]?.providerId === "password" && !user.emailVerified) {
-    return (
-      <div>
-        {/* <h4 className="text-danger">Your Email Not Varified</h4>
-        <h3 className="text-success">Please Varify Your Mail</h3>
-        <button
-          onClick={async () => {
-            await sendEmailVerification();
-            toast("Sent email");
-          }}
-        >
-          {" "}
-          Resend Varification Email Again!
-        </button>
-        <ToastContainer /> */}
-      </div>
-    );
-  }
+//   if (user.providerData[0]?.providerId === "password" && !user.emailVerified) {
+//     return (
+//       <div>
+//         /* <h4 className="text-danger">Your Email Not Varified</h4>
+//         <h3 className="text-success">Please Varify Your Mail</h3>
+//         <button
+//           onClick={async () => {
+//             await sendEmailVerification();
+//             toast("Sent email");
+//           }}
+//         >
+//           {" "}
+//           Resend Varification Email Again!
+//         </button>
+//         <ToastContainer /> */
+//       </div>
+//     );
+//   }
   return children;
 };
 

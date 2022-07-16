@@ -1,9 +1,9 @@
 import React from 'react';
 import useDonates from '../../Hooks/useDonates';
 import AddDonation from '../AddDonation/AddDonation';
-import './Donation.css'
+import './Donations.css'
 
-const Donation = () => {
+const Donations = () => {
     const [donates] = useDonates();
     return (
         <div>
@@ -17,4 +17,4 @@ const Donation = () => {
     );
 };
 
-export default Donation;
+export default Donations;
