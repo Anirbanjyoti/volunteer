@@ -1,0 +1,12 @@
+h1.title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+button.donateBtn {
+    margin-top: 20px;
+    background: #185e70;
+    color: white;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+}

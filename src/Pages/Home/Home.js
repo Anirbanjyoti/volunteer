@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import useDonates from "../../Hooks/useDonates";
 import Aid from "../Aid/Aid";
 import "./Home.css";
 
 const Home = () => {
-  const [donates, setDonates] = useState([]);
-  useEffect(() => {
-    fetch("donates.json")
-      .then((res) => res.json())
-      .then((data) => setDonates(data));
-  }, [donates]);
+  const [donates] = useDonates();
   // Search functionality
-  const searchAid = e =>{
-    const search = e.target.value;
-    console.log(search);
+  // const searchAid = e =>{
+  //   const search = e.target.value;
+  //   console.log(search);
     
-   }
+  //  }
   return (
     <div>
       <div style={{ width: "620px", margin: "50px auto" }}>
@@ -30,7 +26,7 @@ const Home = () => {
             placeholder="Search"
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
-            onChange={searchAid}
+            // onChange={searchAid}
           />
           <Button
             style={{ color: "white" }}
@@ -44,7 +40,7 @@ const Home = () => {
         </InputGroup>
       </div>
       {/* Volunteers */}
-      <h1>TOTAL Aid: {donates.length}</h1>
+      <h1 className="title">TOTAL Aid: {donates.length}</h1>
       <div className="volunteers">
         {donates.map((donate) => (
           <Aid donate={donate}></Aid>

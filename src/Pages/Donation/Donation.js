@@ -1,9 +1,18 @@
 import React from 'react';
+import useDonates from '../../Hooks/useDonates';
+import AddDonation from '../AddDonation/AddDonation';
+import './Donation.css'
 
 const Donation = () => {
+    const [donates] = useDonates();
     return (
         <div>
-            <h1>this is donation page</h1>
+            <h1 className='title'>Donate Here</h1>
+            <div className="volunteers">
+        {donates.map((donate) => (
+          <AddDonation donate={donate}></AddDonation>
+        ))}
+      </div>
         </div>
     );
 };

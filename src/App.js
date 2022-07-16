@@ -7,6 +7,7 @@ import Register from "./Pages/Register/Register";
 import Login from "./Pages/Login/Login";
 import Admin from "./Pages/Admin/Admin";
 import Donation from "./Pages/Donation/Donation";
+import Events from "./Pages/Events/Events";
 // import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Donation></Donation>
         }></Route>
         <Route path="/admin-login" element={<Admin></Admin>}></Route>
+        <Route path="/events" element={<Events></Events>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
       </Routes>
       <Footer></Footer>
