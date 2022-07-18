@@ -33,20 +33,20 @@ const AddEvent = () => {
         <h1>Please Add Events</h1>
         <input
           className="mb-2"
-          placeholder="name"
-          {...register("name", { required: true, maxLength: 20 })}
+          placeholder="Name"
+          {...register("caption", { required: true, maxLength: 20 })}
         />
-        {/* <input
+        <input
           className="mb-2"
-          placeholder="price"
-          type="number"
-          {...register("price")}
-        /> */}
-        <textarea
+          placeholder="Email"
+          type="email"
+          {...register("email")}
+        />
+        {/* <textarea
           className="mb-2"
           placeholder="description"
           {...register("description")}
-        />
+        /> */}
         <input
           className="mb-2"
           type="text"

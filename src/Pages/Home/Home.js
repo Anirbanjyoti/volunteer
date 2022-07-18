@@ -9,12 +9,6 @@ import "./Home.css";
 const Home = () => {
   const [donates] = useDonates();
   const [searchResult, setSearchResult] = useState([]);
-  // const [allEvents, setAllEvents] = useState([]);
-
-  // const items = donates.map((donate) => (
-  //   setAllEvents(donate)
-  // ));
-  // setAllEvents(items);
   
   // Search functionality
   const doSearch = (e) => {
@@ -55,9 +49,6 @@ const Home = () => {
         {searchResult.map((donate) => (
           <Aid key={donate._id} donate={donate}></Aid>
         ))}
-        {/* {donates.map((donate) => (
-          <Aid key={donate._id} donate={donate}></Aid>
-        ))} */}
   
       </div>
     </div>

@@ -1,0 +1,7 @@
+.events {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+button.delete {
+    margin-left: 20px;
+}

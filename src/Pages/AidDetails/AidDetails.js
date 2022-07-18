@@ -4,7 +4,6 @@ import "./AidDetails.css";
 
 const AidDetails = () => {
   const { eventId } = useParams();
-  // const [service] = useServiceDetail(serviceId);
   const [event, setEvent] = useState([]);
 
   useEffect(() => {
