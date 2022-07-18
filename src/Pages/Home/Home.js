@@ -1,4 +1,3 @@
-// import React, { useEffect, useState } from "react";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -9,14 +8,23 @@ import "./Home.css";
 
 const Home = () => {
   const [donates] = useDonates();
-  const [searchResult, setSearchResult] = useState([])
+  const [searchResult, setSearchResult] = useState([]);
+  // const [allEvents, setAllEvents] = useState([]);
+
+  // const items = donates.map((donate) => (
+  //   setAllEvents(donate)
+  // ));
+  // setAllEvents(items);
+  
   // Search functionality
-  const searchAid = e =>{
+  const doSearch = (e) => {
     const searchText = e.target.value;
-    const match = donates.filter(d => d.caption.toLowerCase().includes(searchText));
+    const match = donates.filter((d) =>
+      d.caption.toLowerCase().includes(searchText)
+    );
     setSearchResult(match);
-    
-   }
+  };
+
   return (
     <div>
       <div style={{ width: "620px", margin: "50px auto" }}>
@@ -29,14 +37,13 @@ const Home = () => {
             placeholder="Search"
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
-            onChange={searchAid}
+            onChange={doSearch}
           />
           <Button
             style={{ color: "white" }}
             className="btn btn-primary"
             variant="outline-secondary"
             id="button-addon2"
-            
           >
             Search
           </Button>
@@ -46,8 +53,12 @@ const Home = () => {
       <h1 className="title">TOTAL Aid: {donates.length}</h1>
       <div className="volunteers">
         {searchResult.map((donate) => (
-          <Aid donate={donate}></Aid>
+          <Aid key={donate._id} donate={donate}></Aid>
         ))}
+        {/* {donates.map((donate) => (
+          <Aid key={donate._id} donate={donate}></Aid>
+        ))} */}
+  
       </div>
     </div>
   );

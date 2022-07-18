@@ -9,7 +9,7 @@ import Admin from "./Pages/Admin/Admin";
 import Donation from "./Pages/Donations/Donations";
 import Events from "./Pages/Events/Events";
 import RequireAuth from "./Pages/RequireAuth/RequireAuth";
-// import RequireAuth from "./Pages/RequireAuth/RequireAuth";
+import AidDetails from "./Pages/AidDetails/AidDetails";
 
 function App() {
   return (
@@ -28,8 +28,26 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path="/admin" element={<Admin></Admin>}></Route>
-        <Route path="/events" element={<Events></Events>}></Route>
+        <Route
+          path="/admin"
+          element={
+            <RequireAuth>
+              <Admin></Admin>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/events"
+          element={
+            <RequireAuth>
+              <Events></Events>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/events/:eventId"
+          element={<AidDetails></AidDetails>}
+        ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
       </Routes>
       <Footer></Footer>

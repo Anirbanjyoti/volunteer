@@ -17,12 +17,12 @@ const Admin = () => {
           <Col sm={3}>
             <Nav variant="pills" className="flex-column" style={{background:'#80808054', padding:'50px 0 50px 100px', height:'100%'}}>
               <Nav.Item>
-                <Nav.Link eventKey="first" href="#">
+                <Nav.Link eventKey="first" style={{cursor:'pointer'}}>
                   Volunteer Registration List
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="second" href="#">
+                <Nav.Link eventKey="second" style={{cursor:'pointer'}}>
                   + Add Event
                 </Nav.Link>
               </Nav.Item>
